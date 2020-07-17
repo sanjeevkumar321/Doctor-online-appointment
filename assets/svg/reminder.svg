@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 511.993 511.993" style="enable-background:new 0 0 511.993 511.993;" xml:space="preserve">
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="69.654" y1="448.2119" x2="416.1364" y2="101.7296" gradientTransform="matrix(1.0449 0 0 -1.0449 2.1993 543.3086)">
+	<stop  offset="0" style="stop-color:#2499FF"/>
+	<stop  offset="1" style="stop-color:#004DB1"/>
+</linearGradient>
+<circle style="fill:url(#SVGID_1_);" cx="255.996" cy="255.996" r="255.996"/>
+<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="91.8952" y1="274.9677" x2="423.0852" y2="274.9677" gradientTransform="matrix(1.0449 0 0 -1.0449 2.1993 543.3086)">
+	<stop  offset="0" style="stop-color:#FFFFFF"/>
+	<stop  offset="1" style="stop-color:#C8C6CC"/>
+</linearGradient>
+<path style="fill:url(#SVGID_2_);" d="M368.601,67.993H143.399c-30.218,0-54.942,24.724-54.942,54.942v266.13
+	c0,30.218,24.724,54.942,54.942,54.942h225.203c30.218,0,54.942-24.724,54.942-54.942V122.936
+	C423.543,92.717,398.819,67.993,368.601,67.993z"/>
+<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="91.8952" y1="412.0997" x2="423.0852" y2="412.0997" gradientTransform="matrix(1.0449 0 0 -1.0449 2.1993 543.3086)">
+	<stop  offset="0" style="stop-color:#FF8900"/>
+	<stop  offset="1" style="stop-color:#9A4C00"/>
+</linearGradient>
+<path style="fill:url(#SVGID_3_);" d="M368.601,67.993H143.399c-30.218,0-54.942,24.724-54.942,54.942v34.498h335.087v-34.498
+	C423.543,92.717,398.819,67.993,368.601,67.993z"/>
+<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="49.0631" y1="407.27" x2="380.2531" y2="60.78" gradientTransform="matrix(1.0449 0 0 -1.0449 2.1993 543.3086)">
+	<stop  offset="0" style="stop-color:#2499FF"/>
+	<stop  offset="1" style="stop-color:#004DB1"/>
+</linearGradient>
+<rect x="123.056" y="191.736" style="fill:url(#SVGID_4_);" width="50.677" height="50.677"/>
+<linearGradient id="SVGID_5_" gradientUnits="userSpaceOnUse" x1="91.8952" y1="239.7207" x2="423.0852" y2="239.7207" gradientTransform="matrix(1.0449 0 0 -1.0449 2.1993 543.3086)">
+	<stop  offset="0" style="stop-color:#FFE56C"/>
+	<stop  offset="1" style="stop-color:#F2B329"/>
+</linearGradient>
+<rect x="123.056" y="267.49" style="fill:url(#SVGID_5_);" width="50.677" height="50.677"/>
+<linearGradient id="SVGID_6_" gradientUnits="userSpaceOnUse" x1="91.8952" y1="167.2207" x2="423.0852" y2="167.2207" gradientTransform="matrix(1.0449 0 0 -1.0449 2.1993 543.3086)">
+	<stop  offset="0" style="stop-color:#FF597A"/>
+	<stop  offset="1" style="stop-color:#BD0019"/>
+</linearGradient>
+<rect x="123.056" y="343.244" style="fill:url(#SVGID_6_);" width="50.677" height="50.677"/>
+<g>
+	
+		<linearGradient id="SVGID_7_" gradientUnits="userSpaceOnUse" x1="91.8952" y1="312.2207" x2="423.0852" y2="312.2207" gradientTransform="matrix(1.0449 0 0 -1.0449 2.1993 543.3086)">
+		<stop  offset="0" style="stop-color:#57565C"/>
+		<stop  offset="1" style="stop-color:#000000"/>
+	</linearGradient>
+	<rect x="196.438" y="205.581" style="fill:url(#SVGID_7_);" width="197.117" height="22.987"/>
+	
+		<linearGradient id="SVGID_8_" gradientUnits="userSpaceOnUse" x1="91.8952" y1="239.7207" x2="423.0852" y2="239.7207" gradientTransform="matrix(1.0449 0 0 -1.0449 2.1993 543.3086)">
+		<stop  offset="0" style="stop-color:#57565C"/>
+		<stop  offset="1" style="stop-color:#000000"/>
+	</linearGradient>
+	<rect x="196.438" y="281.335" style="fill:url(#SVGID_8_);" width="197.117" height="22.987"/>
+	
+		<linearGradient id="SVGID_9_" gradientUnits="userSpaceOnUse" x1="91.8952" y1="167.2207" x2="423.0852" y2="167.2207" gradientTransform="matrix(1.0449 0 0 -1.0449 2.1993 543.3086)">
+		<stop  offset="0" style="stop-color:#57565C"/>
+		<stop  offset="1" style="stop-color:#000000"/>
+	</linearGradient>
+	<rect x="196.438" y="357.089" style="fill:url(#SVGID_9_);" width="197.117" height="22.987"/>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
