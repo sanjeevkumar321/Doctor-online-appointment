@@ -1,12 +1,11 @@
-import 'dart:async';
-import 'dart:convert';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'dart:async';
+import 'dart:convert';
+import 'package:numed/screens/doctor_details.dart';
 import 'package:numed/constants/color_constant.dart';
 import 'package:numed/constants/style_constant.dart';
-import 'package:numed/screens/doctordetail.dart';
 import 'package:numed/widgets/outlineBtn.dart';
 
 class getDoctors extends StatefulWidget {
@@ -17,7 +16,7 @@ class getDoctors extends StatefulWidget {
 class _getDoctorsState extends State<getDoctors> {
   Future<List> getData() async {
     final response =
-    await http.get("https://technogenr.com/flutter_test/getdata.php");
+        await http.get("http://technogenr.com/flutter_test/getdata.php");
     return json.decode(response.body);
   }
 
@@ -37,11 +36,11 @@ class _getDoctorsState extends State<getDoctors> {
 
               return snapshot.hasData
                   ? new getDoctorslists(
-                list: snapshot.data,
-              )
+                      list: snapshot.data,
+                    )
                   : new Center(
-                child: new CircularProgressIndicator(),
-              );
+                      child: new CircularProgressIndicator(),
+                    );
             },
           ),
         ));
@@ -50,24 +49,16 @@ class _getDoctorsState extends State<getDoctors> {
 
 class getDoctorslists extends StatelessWidget {
   final List list;
-  List<IconData> iconList = [Icons.videocam, Icons.chat_bubble, Icons.hotel];
-  List<String> nameList = ["Video Call", "Chatting", "Offline"];
-  int selectedIndex = 0;
-  int secondaryIndex = 0;
-  String ps = "sanjeev";
-
-  void onOptionSelected(int index) {
-    secondaryIndex = index;
-  }
+  String getBtnvalue = "Video Call";
 
   getDoctorslists({this.list});
 
   @override
   Widget build(BuildContext context) {
-    return new ListView.builder(
+    return ListView.builder(
       itemCount: list == null ? 0 : list.length,
       itemBuilder: (context, i) {
-        return new Container(
+        return Container(
           margin: EdgeInsets.all(10),
           decoration: BoxDecoration(
             color: mFillColor,
@@ -84,7 +75,7 @@ class getDoctorslists extends StatelessWidget {
                         CircleAvatar(
                           radius: 32,
                           backgroundImage:
-                          AssetImage('assets/images/doctor.png'),
+                              AssetImage('assets/images/doctor.png'),
                         ),
                         Column(
                           children: <Widget>[
@@ -159,11 +150,9 @@ class getDoctorslists extends StatelessWidget {
                   ],
                 ),
                 outlineBtn(
-                  customFunction: (int value) =>
-                  {
+                  sendBtnvalue: (String value) => {
                     //gets you the selected index from the outline Button widget through the callback.
-                    secondaryIndex = value,
-                    print(secondaryIndex)
+                    getBtnvalue = value,
                   },
                 ),
                 Column(
@@ -177,17 +166,17 @@ class getDoctorslists extends StatelessWidget {
                             style: sTitleStyle,
                           ),
                           Spacer(),
-                          new RaisedButton(
+                          RaisedButton(
                             color: mCardTitleColor,
-                            onPressed: () =>
-                                Navigator.of(context).push(
-                                    new MaterialPageRoute(
-                                        builder: (BuildContext context) =>
-                                        new Detail(
-                                          list: list,
+                            onPressed: () => Navigator.of(context).push(
+                                MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        Doctordetails(
                                           index: i,
+                                          list: list,
+                                          btnValue: getBtnvalue,
                                         ))),
-                            child: new Text(
+                            child: Text(
                               "Book",
                               style: TextStyle(color: BackgroundColor),
                             ),

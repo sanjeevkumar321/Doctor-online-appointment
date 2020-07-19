@@ -2,24 +2,24 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:numed/constants/color_constant.dart';
 import 'package:numed/main.dart';
+import 'package:numed/screens/get_all_doctors_screen.dart';
 
 //Callback type definition for sharing the selected index.
-typedef void IndexCallback(int val);
+typedef void AppointmentTypeCallback(String btnValue);
 
 class outlineBtn extends StatefulWidget {
-  final IndexCallback customFunction;
+  final AppointmentTypeCallback sendBtnvalue;
 
-  outlineBtn({Key key, this.customFunction}) : super(key: key);
+  outlineBtn({Key key, this.sendBtnvalue}) : super(key: key);
 
   @override
   _outlineBtnState createState() => _outlineBtnState();
 }
 
 class _outlineBtnState extends State<outlineBtn> {
-  String setapptype;
-
   List<IconData> iconList = [Icons.videocam, Icons.chat_bubble, Icons.hotel];
   List<String> nameList = ["Video Call", "Chatting", "Offline"];
+  String btnValue;
   int selectedIndex = 0;
   int secondaryIndex = 0;
 
@@ -53,11 +53,9 @@ class _outlineBtnState extends State<outlineBtn> {
   void changeSecondaryIndex(int index) {
     setState(() {
       secondaryIndex = index;
-      gv = nameList[index];
-      widget.customFunction(index);
-      print(gv);
-
-//      widget.parentAction("Update from Child 1");
+      btnValue = nameList[index];
+      //set selected btn value
+      widget.sendBtnvalue(btnValue);
     });
   }
 
