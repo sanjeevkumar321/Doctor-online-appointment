@@ -1,12 +1,12 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert';
-import 'package:numed/screens/doctordetail.dart';
+
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 import 'package:numed/constants/color_constant.dart';
 import 'package:numed/constants/style_constant.dart';
+import 'package:numed/screens/doctordetail.dart';
 import 'package:numed/widgets/outlineBtn.dart';
 
 class getDoctors extends StatefulWidget {
@@ -15,12 +15,9 @@ class getDoctors extends StatefulWidget {
 }
 
 class _getDoctorsState extends State<getDoctors> {
-
-
-
   Future<List> getData() async {
     final response =
-        await http.get("https://technogenr.com/flutter_test/getdata.php");
+    await http.get("https://technogenr.com/flutter_test/getdata.php");
     return json.decode(response.body);
   }
 
@@ -40,11 +37,11 @@ class _getDoctorsState extends State<getDoctors> {
 
               return snapshot.hasData
                   ? new getDoctorslists(
-                      list: snapshot.data,
-                    )
+                list: snapshot.data,
+              )
                   : new Center(
-                      child: new CircularProgressIndicator(),
-                    );
+                child: new CircularProgressIndicator(),
+              );
             },
           ),
         ));
@@ -57,7 +54,11 @@ class getDoctorslists extends StatelessWidget {
   List<String> nameList = ["Video Call", "Chatting", "Offline"];
   int selectedIndex = 0;
   int secondaryIndex = 0;
-  String ps="sanjeev";
+  String ps = "sanjeev";
+
+  void onOptionSelected(int index) {
+    secondaryIndex = index;
+  }
 
   getDoctorslists({this.list});
 
@@ -83,7 +84,7 @@ class getDoctorslists extends StatelessWidget {
                         CircleAvatar(
                           radius: 32,
                           backgroundImage:
-                              AssetImage('assets/images/doctor.png'),
+                          AssetImage('assets/images/doctor.png'),
                         ),
                         Column(
                           children: <Widget>[
@@ -135,7 +136,6 @@ class getDoctorslists extends StatelessWidget {
                           top: 8.0, bottom: 8.0, left: 50.0, right: 50.0),
                       child: Row(
                         children: <Widget>[
-
 //                          Icon(
 //                            Icons.video_call,
 //                            color: mBlueColor,
@@ -158,7 +158,14 @@ class getDoctorslists extends StatelessWidget {
                     )
                   ],
                 ),
-                outlineBtn(),
+                outlineBtn(
+                  customFunction: (int value) =>
+                  {
+                    //gets you the selected index from the outline Button widget through the callback.
+                    secondaryIndex = value,
+                    print(secondaryIndex)
+                  },
+                ),
                 Column(
                   children: <Widget>[
                     Padding(
@@ -173,12 +180,17 @@ class getDoctorslists extends StatelessWidget {
                           new RaisedButton(
                             color: mCardTitleColor,
                             onPressed: () =>
-                              Navigator.of(context).push(new MaterialPageRoute(
-                              builder: (BuildContext context) => new Detail(
-                              list: list,
-                              index: i,
-                              ))),
-                            child: new Text("Book",style: TextStyle(color: BackgroundColor),),
+                                Navigator.of(context).push(
+                                    new MaterialPageRoute(
+                                        builder: (BuildContext context) =>
+                                        new Detail(
+                                          list: list,
+                                          index: i,
+                                        ))),
+                            child: new Text(
+                              "Book",
+                              style: TextStyle(color: BackgroundColor),
+                            ),
                           ),
                         ],
                       ),
@@ -192,6 +204,4 @@ class getDoctorslists extends StatelessWidget {
       },
     );
   }
-
-
 }

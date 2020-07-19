@@ -2,11 +2,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:numed/constants/color_constant.dart';
 import 'package:numed/main.dart';
-import 'package:numed/screens/get_all_doctors_screen.dart';
+
+//Callback type definition for sharing the selected index.
+typedef void IndexCallback(int val);
 
 class outlineBtn extends StatefulWidget {
-final void customFunction;
-outlineBtn({Key key,this.customFunction}):super(key:key);
+  final IndexCallback customFunction;
+
+  outlineBtn({Key key, this.customFunction}) : super(key: key);
 
   @override
   _outlineBtnState createState() => _outlineBtnState();
@@ -14,8 +17,6 @@ outlineBtn({Key key,this.customFunction}):super(key:key);
 
 class _outlineBtnState extends State<outlineBtn> {
   String setapptype;
-
-
 
   List<IconData> iconList = [Icons.videocam, Icons.chat_bubble, Icons.hotel];
   List<String> nameList = ["Video Call", "Chatting", "Offline"];
@@ -33,51 +34,50 @@ class _outlineBtnState extends State<outlineBtn> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              customRadio2(iconList[0], 0,nameList[0]),
-              customRadio2(iconList[1], 1,nameList[1]),
-              customRadio2(iconList[2], 2,nameList[2]),
+              customRadio2(iconList[0], 0, nameList[0]),
+              customRadio2(iconList[1], 1, nameList[1]),
+              customRadio2(iconList[2], 2, nameList[2]),
             ],
           ),
         ],
       ),
-
     );
   }
 
-  void changeIndex(int index){
+  void changeIndex(int index) {
     setState(() {
       selectedIndex = index;
     });
   }
 
-  void changeSecondaryIndex(int index){
+  void changeSecondaryIndex(int index) {
     setState(() {
       secondaryIndex = index;
-      gv=nameList[index];
+      gv = nameList[index];
+      widget.customFunction(index);
       print(gv);
 
 //      widget.parentAction("Update from Child 1");
     });
   }
 
-  Widget customRadio2(IconData icon,int index,String name){
+  Widget customRadio2(IconData icon, int index, String name) {
     return Container(
-
-      child:
-        Column(
-          children: <Widget>[
-            OutlineButton(
-
-              onPressed: () => changeSecondaryIndex(index),
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-              borderSide: BorderSide(color: secondaryIndex == index ? headingColor : Colors.grey),
-              child: Icon(icon,color:  secondaryIndex == index ? headingColor : Colors.grey,),
-
-            ),
-            Text(name),
-          ],
-        )
-
-    );
+        child: Column(
+      children: <Widget>[
+        OutlineButton(
+          onPressed: () => changeSecondaryIndex(index),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+          borderSide: BorderSide(
+              color: secondaryIndex == index ? headingColor : Colors.grey),
+          child: Icon(
+            icon,
+            color: secondaryIndex == index ? headingColor : Colors.grey,
+          ),
+        ),
+        Text(name),
+      ],
+    ));
   }
 }
