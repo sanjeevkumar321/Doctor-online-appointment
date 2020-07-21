@@ -136,27 +136,55 @@ class _DoctordetailsState extends State<Doctordetails> {
                     children: <Widget>[
                       Padding(
                         padding: const EdgeInsets.only(top: 2.0, bottom: 1.0),
+                        child: Padding(
+                          padding: EdgeInsets.all(10.0),
+                          child: Text(
+                            "Book for video calling",
+                            style: mTitleStyle,
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Container(
+            decoration: BoxDecoration(
+              color: mFillColor,
+              borderRadius: BorderRadius.circular(5.0),
+            ),
+            child: Column(
+              children: <Widget>[
+                GestureDetector(
+                  onTap: _selectDate,
+                  child: Row(
+                    children: <Widget>[
+                      Container(
+                        width: MediaQuery.of(context).size.width - 50.0,
+                        height: 55,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.black12),
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        padding: EdgeInsets.fromLTRB(25.0, 5.0, 40.0, 5.0),
+                        margin: EdgeInsets.fromLTRB(25.0, 16.0, .0, 5.0),
                         child: Row(
                           children: <Widget>[
-                            Text(
-                              "Available Today",
-                              style: sTitleStyle,
+                            SizedBox(width: 80.0),
+                            Image.asset(
+                              "assets/images/calend.png",
+                              height: 28,
+                              width: 28,
                             ),
-                            Spacer(),
-                            RaisedButton(
-                              color: mCardTitleColor,
-                              onPressed: () => debugPrint("abc"),
-//                            Navigator.of(context).push(
-//                                MaterialPageRoute(
-//                                    builder: (BuildContext context) =>
-//                                        Doctordetails(
-//                                          index: i,
-//                                          list: list,
-//                                          btnValue: getBtnvalue,
-//                                        ))),
-                              child: Text(
-                                "Book",
-                                style: TextStyle(color: BackgroundColor),
+                            SizedBox(width: 5.0),
+                            Text(
+                              _changeformatdate,
+                              style: TextStyle(
+                                fontSize: 16.0,
+                                color: Color(0xFF21BFBD),
                               ),
                             ),
                           ],
@@ -164,8 +192,135 @@ class _DoctordetailsState extends State<Doctordetails> {
                       ),
                     ],
                   ),
-                ],
-              ),
+                ),
+
+                GestureDetector(
+                  onTap: ()=>debugPrint("Morning"),
+                  child: Row(
+                    children: <Widget>[
+                      Container(
+                        width: MediaQuery.of(context).size.width - 50,
+                        height: 55,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.black12),
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        padding: EdgeInsets.fromLTRB(25.0, 5.0, 40.0, 5.0),
+                        margin: EdgeInsets.fromLTRB(25.0, 16.0, .0, 5.0),
+                        child: Row(
+                          children: <Widget>[
+                            Image.asset(
+                              "assets/images/mountain (2).png",
+                              height: 20,
+                              width: 20,
+                            ),
+                            SizedBox(width: 15.0),
+                            Text(
+                              "Morning",
+                              style: TextStyle(
+                                fontSize: 17.0, //   color: Color(0xFF21BFBD),
+                              ),
+                            ),
+                            Spacer(),
+                            Text(
+                              "Not Available",
+                              //  maxLines: 5,
+                              style: TextStyle(
+                                color: Colors.black54,
+                                fontSize: 12,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                GestureDetector(
+                  onTap: ()=>debugPrint("Afternoon"),
+                  child: Row(
+                    children: <Widget>[
+                      Container(
+                        width: MediaQuery.of(context).size.width - 50,
+                        height: 55,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.black12),
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        padding: EdgeInsets.fromLTRB(25.0, 5.0, 40.0, 5.0),
+                        margin: EdgeInsets.fromLTRB(25.0, 16.0, .0, 5.0),
+                        child: Row(
+                          children: <Widget>[
+                            Image.asset(
+                              "assets/images/sun.png",
+                              height: 20,
+                              width: 20,
+                            ),
+                            SizedBox(width: 15.0),
+                            Text(
+                              "Afternoon",
+                              style: TextStyle(
+                                fontSize: 17.0, //   color: Color(0xFF21BFBD),
+                              ),
+                            ),
+                            Spacer(),
+                            Text(
+                              "Not Available",
+                              //  maxLines: 5,
+                              style: TextStyle(
+                                color: Colors.black54,
+                                fontSize: 12,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                GestureDetector(
+                   onTap: ()=>debugPrint("Evening"),
+                  child: Row(
+                    children: <Widget>[
+                      Container(
+                        width: MediaQuery.of(context).size.width - 50,
+                        height: 55,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.black12),
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        padding: EdgeInsets.fromLTRB(25.0, 5.0, 40.0, 5.0),
+                        margin: EdgeInsets.fromLTRB(25.0, 16.0, .0, 5.0),
+                        child: Row(
+                          children: <Widget>[
+                            Image.asset(
+                              "assets/images/day-and-night.png",
+                              height: 20,
+                              width: 20,
+                            ),
+                            SizedBox(width: 15.0),
+                            Text(
+                              "Evening",
+                              style: TextStyle(
+                                fontSize: 17.0, //   color: Color(0xFF21BFBD),
+                              ),
+                            ),
+                            Spacer(),
+                            Text(
+                              "Not Available",
+                              //  maxLines: 5,
+                              style: TextStyle(
+                                color: Colors.black54,
+                                fontSize: 12,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
           )
         ],
