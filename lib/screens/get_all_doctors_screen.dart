@@ -22,24 +22,24 @@ class _getDoctorsState extends State<getDoctors> {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-        appBar: new AppBar(
+    return  Scaffold(
+        appBar:  AppBar(
           backgroundColor: mCardTitleColor,
-          title: new Text("Doctors"),
+          title:  Text("Doctors"),
         ),
         body: Container(
-          decoration: new BoxDecoration(color: kBackgroundColor),
-          child: new FutureBuilder<List>(
+          decoration:  BoxDecoration(color: kBackgroundColor),
+          child:  FutureBuilder<List>(
             future: getData(),
             builder: (context, snapshot) {
               if (snapshot.hasError) print(snapshot.error);
 
               return snapshot.hasData
-                  ? new getDoctorslists(
+                  ?  getDoctorslists(
                       list: snapshot.data,
                     )
-                  : new Center(
-                      child: new CircularProgressIndicator(),
+                  :  Center(
+                      child:  CircularProgressIndicator(),
                     );
             },
           ),

@@ -2,6 +2,8 @@ import 'package:numed/constants/color_constant.dart';
 import 'package:numed/constants/style_constant.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
+import 'package:numed/screens/appointment_form.dart';
+
 
 class Doctordetails extends StatefulWidget {
   List list;
@@ -55,21 +57,21 @@ class _DoctordetailsState extends State<Doctordetails> {
                       Row(
                         children: <Widget>[
                           CircleAvatar(
-                            radius: 32,
+                            radius: 45,
                             backgroundImage:
                                 AssetImage('assets/images/doctor.png'),
                           ),
                           Column(
                             children: <Widget>[
                               Padding(
-                                padding: const EdgeInsets.only(left: 20.0),
+                                padding: const EdgeInsets.only(left: 30.0),
                                 child: Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: <Widget>[
                                       Text(
-                                        "${widget.btnValue}",
+                                        "${widget.list[widget.index]['item_name']}",
                                         style: mTitleStyle,
                                         overflow: TextOverflow.ellipsis,
                                         maxLines: 2,
@@ -80,6 +82,10 @@ class _DoctordetailsState extends State<Doctordetails> {
                                       ),
                                       Text(
                                         '${widget.list[widget.index]['stock']} years of experience ',
+                                        style: doctorsSubtitle,
+                                      ),
+                                      Text(
+                                        '${widget.list[widget.index]['stock']} designation ',
                                         style: doctorsSubtitle,
                                       ),
                                       Text(
@@ -139,7 +145,7 @@ class _DoctordetailsState extends State<Doctordetails> {
                         child: Padding(
                           padding: EdgeInsets.all(10.0),
                           child: Text(
-                            "Book for video calling",
+                            "Book for ${widget.btnValue}",
                             style: mTitleStyle,
                             textAlign: TextAlign.center,
                           ),
@@ -195,7 +201,12 @@ class _DoctordetailsState extends State<Doctordetails> {
                 ),
 
                 GestureDetector(
-                  onTap: ()=>debugPrint("Morning"),
+                  onTap: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => AppointmentForm()),
+                    );
+                  },
                   child: Row(
                     children: <Widget>[
                       Container(
@@ -237,7 +248,12 @@ class _DoctordetailsState extends State<Doctordetails> {
                   ),
                 ),
                 GestureDetector(
-                  onTap: ()=>debugPrint("Afternoon"),
+                  onTap: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => AppointmentForm()),
+                    );
+                  },
                   child: Row(
                     children: <Widget>[
                       Container(
@@ -279,7 +295,12 @@ class _DoctordetailsState extends State<Doctordetails> {
                   ),
                 ),
                 GestureDetector(
-                   onTap: ()=>debugPrint("Evening"),
+                  onTap: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => AppointmentForm()),
+                    );
+                  },
                   child: Row(
                     children: <Widget>[
                       Container(
