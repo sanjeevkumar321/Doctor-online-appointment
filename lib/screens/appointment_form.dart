@@ -1,12 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'dart:async';
-import 'dart:convert';
-import 'package:numed/screens/doctor_details.dart';
+
 import 'package:numed/constants/color_constant.dart';
 import 'package:numed/constants/style_constant.dart';
-import 'package:numed/widgets/outlineBtn.dart';
 
 class AppointmentForm extends StatelessWidget {
   @override
@@ -23,6 +19,7 @@ class form extends StatefulWidget {
 class _formState extends State<form> {
   final _minimumPadding = 5.0;
   TextEditingController userName = TextEditingController();
+  TextEditingController userAge = TextEditingController();
   TextEditingController userMobileno = TextEditingController();
   TextEditingController userMessage = TextEditingController();
   var displayResult = '';
@@ -59,7 +56,7 @@ class _formState extends State<form> {
                             CircleAvatar(
                               radius: 45,
                               backgroundImage:
-                              AssetImage('assets/images/doctor.png'),
+                                  AssetImage('assets/images/doctor.png'),
                             ),
                             Column(
                               children: <Widget>[
@@ -67,8 +64,9 @@ class _formState extends State<form> {
                                   padding: const EdgeInsets.only(left: 30.0),
                                   child: Column(
                                       crossAxisAlignment:
-                                      CrossAxisAlignment.start,
-                                      mainAxisAlignment: MainAxisAlignment.center,
+                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       children: <Widget>[
                                         Text(
                                           "sanjeev",
@@ -150,51 +148,51 @@ class _formState extends State<form> {
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(5.0))),
                 )),
-            Row(children: <Widget>[
-             Container(
-               width: 110.0,
-               child: Expanded(
-                 child:   Padding(
-                     padding: EdgeInsets.all(_minimumPadding),
-                     child: TextField(
-                       controller: userMobileno,
-                       keyboardType: TextInputType.number,
-                       decoration: InputDecoration(
-                           labelText: 'Age',
-                           hintText: 'Enter Age',
-                           labelStyle: TextStyle(
-                             color: mCardSubtitleColor,
-                           ),
-                           focusedBorder: OutlineInputBorder(
-                             borderSide:
-                             BorderSide(color: mCardSubtitleColor, width: 1.0),
-                           ),
-                           border: OutlineInputBorder(
-                               borderRadius: BorderRadius.circular(5.0))),
-                     )),
-               ),
-             ),
-              Expanded(
-                child:   Padding(
-                    padding: EdgeInsets.all(_minimumPadding),
-                    child: TextField(
-                      controller: userMobileno,
-                      keyboardType: TextInputType.number,
-                      decoration: InputDecoration(
-                          labelText: 'Mobile Number',
-                          hintText: 'Enter Mobile Number',
-                          labelStyle: TextStyle(
-                            color: mCardSubtitleColor,
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide:
-                            BorderSide(color: mCardSubtitleColor, width: 1.0),
-                          ),
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(5.0))),
-                    )),
-              ),
-            ],),
+            Row(
+              children: <Widget>[
+                Container(
+                  width: 120.0,
+                  child: Padding(
+                      padding: EdgeInsets.all(_minimumPadding),
+                      child: TextField(
+                        controller: userAge,
+                        keyboardType: TextInputType.number,
+                        decoration: InputDecoration(
+                            labelText: 'Age',
+                            hintText: 'Enter Age',
+                            labelStyle: TextStyle(
+                              color: mCardSubtitleColor,
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: mCardSubtitleColor, width: 1.0),
+                            ),
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(5.0))),
+                      )),
+                ),
+                Expanded(
+                  child: Padding(
+                      padding: EdgeInsets.all(_minimumPadding),
+                      child: TextField(
+                        controller: userAge,
+                        keyboardType: TextInputType.number,
+                        decoration: InputDecoration(
+                            labelText: 'Age',
+                            hintText: 'Enter Age',
+                            labelStyle: TextStyle(
+                              color: mCardSubtitleColor,
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: mCardSubtitleColor, width: 1.0),
+                            ),
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(5.0))),
+                      )),
+                ),
+              ],
+            ),
             Padding(
                 padding: EdgeInsets.all(_minimumPadding),
                 child: TextField(
@@ -209,19 +207,21 @@ class _formState extends State<form> {
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderSide:
-                        BorderSide(color: mCardSubtitleColor, width: 1.0),
+                            BorderSide(color: mCardSubtitleColor, width: 1.0),
                       ),
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(5.0))),
                 )),
-
             Padding(
                 padding: EdgeInsets.all(_minimumPadding),
                 child: RaisedButton(
                   color: mCardSubtitleColor,
-                  child: Text('Book', style: TextStyle(fontSize: 20,color: BackgroundColor)),
+                  child: Text('Book',
+                      style: TextStyle(fontSize: 20, color: BackgroundColor)),
                   onPressed: () {
-                    setState(() {debugPrint("submit");});
+                    setState(() {
+                      debugPrint("submit");
+                    });
                   },
                 )),
             Padding(

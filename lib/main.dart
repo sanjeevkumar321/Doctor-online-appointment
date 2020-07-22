@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:numed/screens/home_screen.dart';
 
 
-var  gv="global";
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
